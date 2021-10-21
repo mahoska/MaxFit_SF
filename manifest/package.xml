@@ -66,5 +66,16 @@
     <members>Speaker__c.Speaker_Duplicate_Rule</members>
     <name>DuplicateRule</name>
 </types>
+<types>
+        <members>Attendee__c.*</members>
+        <members>Speaker__c.*</members>
+        <name>SharingCriteriaRule</name>
+</types>
+<types>
+    <members>Attendee</members>
+    <members>Speaker</members>
+    <members>Event Manager</members>
+    <name>Profile</name>
+   </types>
     <version>52.0</version>
 </Package>

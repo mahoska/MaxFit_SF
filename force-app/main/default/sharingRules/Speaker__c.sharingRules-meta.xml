@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Speakers_with_Organazer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Speakers with Organazer</label>
+        <sharedTo>
+            <role>Organizer</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Email__c</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

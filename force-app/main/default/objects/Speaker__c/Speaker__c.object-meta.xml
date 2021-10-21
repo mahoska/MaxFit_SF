@@ -152,7 +152,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Read</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <label>Speaker</label>
     <nameField>
         <label>Name</label>
@@ -160,6 +160,6 @@
     </nameField>
     <pluralLabel>Speakers</pluralLabel>
     <searchLayouts></searchLayouts>
-    <sharingModel>Read</sharingModel>
+    <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
