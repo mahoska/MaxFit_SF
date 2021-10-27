@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : Anna Makhovskaya
+  @group             : 
+  @last modified on  : 10-26-2021
+  @last modified by  : Anna Makhovskaya
+-->
+<template>
+    <lightning-card variant="Narrow" title="Lookup Demo" icon-name="standard:record">
+        <div class="slds-m-around_small">
+            <c-custom-lookup parentidfield="AccountId" field-name="Name" object-name="Contact" label="Parent Account"
+                iconname="standard:account">
+            </c-custom-lookup>
+        </div>
+        <div class="slds-m-around_small">
+            <c-custom-lookup parentidfield="ParentId" field-name="CaseNumber" object-name="Case" label="Parent Case"
+                iconname="standard:case">
+            </c-custom-lookup>
+        </div>
+        <div class="slds-m-around_small">
+
+        </div>
+    </lightning-card>
+</template>

@@ -76,6 +76,10 @@
     <members>Speaker</members>
     <members>Event Manager</members>
     <name>Profile</name>
-   </types>
+</types>
+<types>
+    <members>*</members>
+    <name>LightningComponentBundle</name>
+</types> 
     <version>52.0</version>
 </Package>
