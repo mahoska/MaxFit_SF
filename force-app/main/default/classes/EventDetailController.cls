@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Anna Makhovskaya
  * @group             : 
- * @last modified on  : 11-01-2021
+ * @last modified on  : 11-02-2021
  * @last modified by  : Anna Makhovskaya
 **/
 public with sharing class EventDetailController {
@@ -10,7 +10,7 @@ public with sharing class EventDetailController {
     public static List<EventSpeakers__c> getSpeakers(String eventId){
 
         List<EventSpeakers__c> speakersList =
-            [SELECT Id, Name, Speaker__c, Speaker__r.Name, Speaker__r.Phone__c, Speaker__r.Email__c, Speaker__r.Company__c 
+            [SELECT Id, Name, Speaker__c, Speaker__r.Name, Speaker__r.Phone__c, Speaker__r.Email__c, Speaker__r.Company__c, Speaker__r.Picture__c, Speaker__r.About_Me__c  
             FROM EventSpeakers__c  
             WHERE Event__c = :eventId  
             WITH SECURITY_ENFORCED];

@@ -13,6 +13,10 @@ import getAttendees from '@salesforce/apex/EventDetailController.getAttendees';
 import { NavigationMixin } from 'lightning/navigation';
 import { encodeDefaultFieldValues } from 'lightning/pageReferenceUtils';
 
+import userId from '@salesforce/user/Id';
+import { getRecord } from "lightning/uiRecordApi";
+import profile from "@salesforce/schema/User.Profile.Name";
+
 const columns = [
     { label: 'Name', fieldName: 'Name', cellAttributes: { iconName: 'standard:user', iconPosition: 'left' } },
     { label: 'Email', fieldName: 'Email', type: 'email' },
@@ -47,6 +51,8 @@ export default class EventDetails extends NavigationMixin(LightningElement) {
                 speaker.Name = speaker.Speaker__r.Name;
                 speaker.Email = speaker.Speaker__r.Email__c;
                 speaker.Phone = speaker.Speaker__r.Phone__c;
+                speaker.Picture__c = speaker.Speaker__r.Picture__c;
+                speaker.About_Me__c = speaker.Speaker__r.About_Me__c;
                 speaker.CompanyName = speaker.Speaker__r.Company__c;
             });
             //console.log('result: ', JSON.parse(JSON.stringify(result)));
