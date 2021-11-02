@@ -2,7 +2,7 @@
   @description       : 
   @author            : Anna Makhovskaya
   @group             : 
-  @last modified on  : 11-01-2021
+  @last modified on  : 11-02-2021
   @last modified by  : Anna Makhovskaya
 -->
 <template>
@@ -20,6 +20,9 @@
                 </div>
             </lightning-tab>
             <lightning-tab label="Event Speakers" value="speaker" onactive={handleSpeakerActive}>
+
+                <lightning-button variant="brand" label="New Speaker" title="New Speaker" onclick={createSpeaker}></lightning-button>
+                
                 <template if:true={speakerList}>
                     <lightning-datatable 
                     key-field="id"
@@ -51,6 +54,9 @@
                 </template>
             </lightning-tab>
             <lightning-tab label="Event Attendees" value="attendee" onactive={handleAttendee}>
+
+                <lightning-button variant="brand" label="New Attendee" title="New Attendee" onclick={createAttendee}></lightning-button>
+
                 <template if:true={attendeesList}>
                     <lightning-datatable 
                     key-field="id"

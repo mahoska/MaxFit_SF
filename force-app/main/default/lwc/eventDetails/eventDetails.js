@@ -2,13 +2,16 @@
  * @description       : 
  * @author            : Anna Makhovskaya
  * @group             : 
- * @last modified on  : 11-01-2021
+ * @last modified on  : 11-02-2021
  * @last modified by  : Anna Makhovskaya
 **/
 import { LightningElement, api, track } from 'lwc';
 import getSpeakers from '@salesforce/apex/EventDetailController.getSpeakers';
 import getLocationDetails from '@salesforce/apex/EventDetailController.getLocationDetails';
 import getAttendees from '@salesforce/apex/EventDetailController.getAttendees';
+
+import { NavigationMixin } from 'lightning/navigation';
+import { encodeDefaultFieldValues } from 'lightning/pageReferenceUtils';
 
 const columns = [
     { label: 'Name', fieldName: 'Name', cellAttributes: { iconName: 'standard:user', iconPosition: 'left' } },
@@ -25,7 +28,7 @@ const columnsAtt = [
 
 ];
 
-export default class EventDetails extends LightningElement {
+export default class EventDetails extends NavigationMixin(LightningElement) {
     @api recordId;
     @track speakerList;
     @track attendeesList;
@@ -93,6 +96,36 @@ export default class EventDetails extends LightningElement {
         }).catch((err) => {
             this.attendeesList = undefined;
             this.errors = err;
+        });
+    }
+
+    createSpeaker() {
+        const defaultValues = encodeDefaultFieldValues({
+            Event__c: this.recordId
+        });
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'EventSpeakers__c',
+                actionName: "new"
+            }, state: {
+                defaultFieldValues: defaultValues
+            }
+        });
+    }
+
+    createAttendee() {
+        const defaultValues = encodeDefaultFieldValues({
+            Event__c: this.recordId
+        });
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'Event_Attendee__c',
+                actionName: "new"
+            }, state: {
+                defaultFieldValues: defaultValues
+            }
         });
     }
 
