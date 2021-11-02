@@ -1,0 +1,71 @@
+<!--
+  @description       : 
+  @author            : Anna Makhovskaya
+  @group             : 
+  @last modified on  : 11-01-2021
+  @last modified by  : Anna Makhovskaya
+-->
+<template>
+    <lightning-card variant="Narrow" title="Event Details" icon-name="standard:event">
+        <lightning-tabset variant="scoped" active-tab-value="event">
+            <lightning-tab label="Event Details" value="event">
+                <div class="slds-m-around_small">
+                    <lightning-record-form
+                        record-id={recordId}
+                        layout-type="Full"
+                        columns="2"
+                        object-api-name="Event__c"
+                        mode="readonly">
+                    </lightning-record-form>
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Event Speakers" value="speaker" onactive={handleSpeakerActive}>
+                <template if:true={speakerList}>
+                    <lightning-datatable 
+                    key-field="id"
+                    data={speakerList}
+                    show-row-number-column=""
+                    hide-checkbox-column=""
+                    columns={columnsList}
+                    ></lightning-datatable>
+                    <template if:false={errors}>
+                        <template if:false={speakerList}>
+                            There are no Speaker associated with the Event.
+                        </template>
+                    </template>
+                </template>
+            </lightning-tab>
+            <lightning-tab label="Event Location" value="location" onactive={handleLocationDetails}>
+                <template if:true={eventRec}>
+                    <template if:true={eventRec.Location__r.Land_Mark__c}>
+                        Location Landmark - {eventRec.Location__r.Land_Mark__c}
+                    </template>
+                    <lightning-formatted-address 
+                        city={eventRec.Location__r.City__c}
+                        province={eventRec.Location__r.State__c}
+                        postal-code={eventRec.Location__r.Postal_Code__c}
+                        country={eventRec.Location__r.Country__c}
+                        street={eventRec.Location__r.Street__c}>
+                    </lightning-formatted-address>
+
+                </template>
+            </lightning-tab>
+            <lightning-tab label="Event Attendees" value="attendee" onactive={handleAttendee}>
+                <template if:true={attendeesList}>
+                    <lightning-datatable 
+                    key-field="id"
+                    data={attendeesList}
+                    show-row-number-column=""
+                    hide-checkbox-column=""
+                    columns={columnsAtt}
+                    ></lightning-datatable>
+                    <template if:false={errors}>
+                        <template if:false={attendeesList}>
+                            There are no Attendees associated with the Event.
+                        </template>
+                    </template>
+                </template>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>

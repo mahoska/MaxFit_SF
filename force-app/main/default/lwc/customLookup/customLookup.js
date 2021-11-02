@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Anna Makhovskaya
  * @group             : 
- * @last modified on  : 10-26-2021
+ * @last modified on  : 10-27-2021
  * @last modified by  : Anna Makhovskaya
 **/
 import { LightningElement, api } from 'lwc';
@@ -19,7 +19,7 @@ export default class CustomLookup extends LightningElement {
     records;
     selectedRecord;
 
-    hanldeSearch(event) {
+    handleSearch(event) {
 
         var searchVal = event.detail.value;
         searchRecords({

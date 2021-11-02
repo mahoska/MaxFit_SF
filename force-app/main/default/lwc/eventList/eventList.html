@@ -1,0 +1,32 @@
+<!--
+  @description       : 
+  @author            : Anna Makhovskaya
+  @group             : 
+  @last modified on  : 11-02-2021
+  @last modified by  : Anna Makhovskaya
+-->
+<template>
+    <lightning-card variant="Narrow" title="Upcoming Events" icon-name="standard:event">
+        <div class="slds-m-around_small">
+            <template if:true={error}>
+                {error}
+            </template>
+        </div>
+        <div class="slds-m-around_small">
+            <c-search-component search-label="Event Name" show-labl="true" onsearch={handleSearch} ></c-search-component>
+            &nbsp;
+            <lightning-input type="datetime" value={startdatetime} label="Start Date Time" onchange={handleStartDate}></lightning-input>
+            &nbsp;
+            <c-search-component search-label="Event Location" show-labl="true" onsearch={handleLocationSearch} ></c-search-component>
+        </div>
+        <div class="slds-m-around_small">
+            <lightning-datatable 
+            key-field="id"
+            data={recordsToDisplay}
+            show-row-number-column
+            hide-checkbox-column
+            columns={columnsList}
+            ></lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

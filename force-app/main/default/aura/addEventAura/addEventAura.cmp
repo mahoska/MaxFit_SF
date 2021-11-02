@@ -1,0 +1,10 @@
+<!--
+  @description       : 
+  @author            : Anna Makhovskaya
+  @group             : 
+  @last modified on  : 10-29-2021
+  @last modified by  : Anna Makhovskaya
+-->
+<aura:component implements="lightning:actionOverride">
+<c:addEvent/>
+</aura:component>	
