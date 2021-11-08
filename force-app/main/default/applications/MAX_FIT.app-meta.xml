@@ -56,6 +56,7 @@
     <tabs>Error_Log__c</tabs>
     <tabs>Location__c</tabs>
     <tabs>standard-Location</tabs>
+    <tabs>Speaker__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>MAX_FIT_UtilityBar</utilityBar>
 </CustomApplication>

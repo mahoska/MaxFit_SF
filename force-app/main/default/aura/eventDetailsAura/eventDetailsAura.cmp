@@ -7,5 +7,5 @@
 -->
 <aura:component implements="lightning:actionOverride, flexipage:availableForAllPageTypes, 
 flexipage:availableForRecordHome, forceCommunity:availableForAllPageTypes">
-<c:addEvent/>
-</aura:component>	
+<c:eventDetails/>
+</aura:component>		

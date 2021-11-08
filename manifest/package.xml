@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>AttendeeEventsService</members>
+        <members>CustomSearchController</members>
+        <members>DeleteEventBatch</members>
+        <members>DeleteEventBatchTest</members>
+        <members>EventAttendeeTriggerHandler</members>
+        <members>EventAttendeeTriggerTest</members>
+        <members>EventDetailController</members>
+        <members>EventDetailService</members>
+        <members>EventManager</members>
+        <members>TransactionLogHandler</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -17,15 +26,25 @@
         <name>ApexTestSuite</name>
     </types>
     <types>
-        <members>*</members>
+        <members>EventAttendeeTrigger</members>
+        <members>EventSpeakerTrigger</members>
+        <members>LocationTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>*</members>
+        <members>addEventAura</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
-        <members>*</members>
+        <members>addEvent</members>
+        <members>attendeeEvents</members>
+        <members>customLookup</members>
+        <members>eventDetails</members>
+        <members>eventList</members>
+        <members>lookupDemo</members>
+        <members>recordListComponent</members>
+        <members>searchComponent</members>
+        <members>speakerTile</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
@@ -69,17 +88,28 @@
 <types>
         <members>Attendee__c.*</members>
         <members>Speaker__c.*</members>
+        <members>Event_Organizer__c.*</members>
+        <members>Location__c.*</members>
         <name>SharingCriteriaRule</name>
 </types>
 <types>
     <members>Attendee</members>
     <members>Speaker</members>
     <members>Event Manager</members>
+    <mambers>MaxFit Attendee</mambers>
+    <mambers>MaxFit Organizer</mambers>
     <name>Profile</name>
 </types>
 <types>
     <members>*</members>
     <name>LightningComponentBundle</name>
 </types> 
+<types>
+        <members>Event_Record_Page1</members>
+        <members>EAttendee_Record_Page</members>
+        <members>Home_Record_Default</members>
+        <members>MAX_FIT_UtilityBar</members>
+        <name>FlexiPage</name>
+    </types>
     <version>52.0</version>
 </Package>
