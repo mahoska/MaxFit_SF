@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : Anna Makhovskaya
+  @group             : 
+  @last modified on  : 11-12-2021
+  @last modified by  : Anna Makhovskaya
+-->
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item  size="12" padding="around-small" small-device-size="12" medium-device-size="12" large-device-size="12">
+            <lightning-input type="text" variant="standard" onchange={handleChange} name="Name" label="Full Name" required></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item  size="12" padding="around-small" small-device-size="12" medium-device-size="12" large-device-size="12">
+            <lightning-input type="email" variant="standard" onchange={handleChange} name="Email__c" label="Email" required></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item  size="12" padding="around-small" small-device-size="12" medium-device-size="12" large-device-size="12">
+            <lightning-input type="text" variant="standard" onchange={handleChange} name="Title__c" label="Title" required></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item  size="12" padding="around-small" small-device-size="12" medium-device-size="12" large-device-size="12">
+            <lightning-input type="text" variant="standard" onchange={handleChange} name="Company_Name__c" label="Company" required></lightning-input>
+        </lightning-layout-item>
+    </lightning-layout>
+    <div class="slds-var-p-around_small">
+        <lightning-button variant="destructive" label="Cancel" onclick={handleCancel}></lightning-button>
+        &nbsp;&nbsp;
+        <lightning-button variant="brand" label="RSVP" onclick={handleClick}></lightning-button>
+    </div>
+</template>

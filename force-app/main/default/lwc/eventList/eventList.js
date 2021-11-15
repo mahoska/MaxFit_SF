@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Anna Makhovskaya
  * @group             : 
- * @last modified on  : 11-02-2021
+ * @last modified on  : 11-15-2021
  * @last modified by  : Anna Makhovskaya
 **/
 import { LightningElement, track } from 'lwc';
@@ -34,7 +34,7 @@ export default class EventList extends LightningElement {
         upcomingEvents()
             .then(data => {
                 data.forEach(event => {
-                    event.URL = "https://" + window.location.host + '/' + event.Id;
+                    event.URL = "https://" + window.location.host + "/s/" + 'event-details?eventId=' + event.Id + '&source=eventListPage';
                     event.EVNT_ORG = event.Event_Organizer__r.Name;
                     if (event.Location__c) {
                         event.Location = event.Location__r.Name;

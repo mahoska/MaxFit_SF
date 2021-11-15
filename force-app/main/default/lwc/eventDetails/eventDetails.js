@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Anna Makhovskaya
  * @group             : 
- * @last modified on  : 11-02-2021
+ * @last modified on  : 11-15-2021
  * @last modified by  : Anna Makhovskaya
 **/
 import { LightningElement, api, track } from 'lwc';
@@ -49,7 +49,7 @@ export default class EventDetails extends NavigationMixin(LightningElement) {
 
             result.forEach(speaker => {
                 speaker.Name = speaker.Speaker__r.Name;
-                speaker.Email = speaker.Speaker__r.Email__c;
+                speaker.Email = "*********@gmail.com";//speaker.Speaker__r.Email__c;
                 speaker.Phone = speaker.Speaker__r.Phone__c;
                 speaker.Picture__c = speaker.Speaker__r.Picture__c;
                 speaker.About_Me__c = speaker.Speaker__r.About_Me__c;
@@ -87,7 +87,7 @@ export default class EventDetails extends NavigationMixin(LightningElement) {
         }).then(result => {
             result.forEach(att => {
                 att.Name = att.Attendee__r.Name;
-                att.Email = att.Attendee__r.Email__c;
+                att.Email = "*********@gmail.com";//att.Attendee__r.Email__c;
                 att.CompanyName = att.Attendee__r.Company_Name__c;
                 if (att.Attendee__r.Location__c) {
                     att.Location = att.Attendee__r.Location__r.Name;

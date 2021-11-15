@@ -1,0 +1,12 @@
+.footerContent{
+    border-radius: 10px;
+    font-size:15px;
+    font-family: 'Lato';
+    background: #e8e8e8 !important;
+    color: black;
+}
+
+.titleCase{
+    font-size: 20px;
+    color: blue;
+}

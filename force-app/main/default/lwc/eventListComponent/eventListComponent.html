@@ -1,0 +1,32 @@
+<!--
+  @description       : 
+  @author            : Anna Makhovskaya
+  @group             : 
+  @last modified on  : 11-08-2021
+  @last modified by  : Anna Makhovskaya
+-->
+<template>
+    <lightning-card variant="Narrow">
+        <!--UpCommingEvents-->
+        <div class="slds-text-heading_large">Upcoming Events</div>
+        <hr/>
+        <lightning-layout multiple-rows>
+            <template if:true={upCommingEvents} for:each={upCommingEvents} for:item="event" for:index="index">
+                <lightning-layout-item key={event.Id} size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="4">
+                    <c-event-tile event={event} onselect={handleEventClick}></c-event-tile>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+        
+        <!--PastEvents-->
+        <div class="slds-text-heading_large">Past Events</div>
+        <hr/>
+        <lightning-layout multiple-rows>
+            <template if:true={pastEvents} for:each={pastEvents} for:item="event" for:index="index">
+                <lightning-layout-item key={event.Id} size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="4">
+                   <c-event-tile event={event}  onselect={handleEventClick}></c-event-tile>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </lightning-card>
+</template>

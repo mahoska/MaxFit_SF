@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : Anna Makhovskaya
+  @group             : 
+  @last modified on  : 11-12-2021
+  @last modified by  : Anna Makhovskaya
+-->
+<template>
+    <div class="footerContent slds-m-around_large">
+        <p class="titleCase">
+            Quick Links
+        </p>
+        <lightning-layout multiple-rows>
+            <template if:true={__footerContents} for:each={__footerContents} for:item="content" for:index="index">
+                <lightning-layout-item key={content.Id} size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="4">
+                    <div class="custom-box">
+                        <lightning-formatted-rich-text value={content.Content__c}  ></lightning-formatted-rich-text>
+                    </div>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </div>
+</template>

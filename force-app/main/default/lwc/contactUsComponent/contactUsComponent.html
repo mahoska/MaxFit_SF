@@ -1,0 +1,31 @@
+<!--
+  @description       : 
+  @author            : Anna Makhovskaya
+  @group             : 
+  @last modified on  : 11-15-2021
+  @last modified by  : Anna Makhovskaya
+-->
+<template>
+    <lightning-spinner alternative-text="Loading" size="small" variant="brand" if:true={__isSpinnerActive}></lightning-spinner>
+    <div>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="12" large-device-size="12">
+                <lightning-input type="text" variant="standard" max-length="80" onchange={handleChange} name="Name" label="Full Name" required ></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="12" large-device-size="12">
+                <lightning-input type="email" variant="standard" max-length="80" onchange={handleChange} name="Email" label="Email" required ></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="12" large-device-size="12">
+                <lightning-input type="text" variant="standard" max-length="80" onchange={handleChange} name="Subject" label="Subject"  required ></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="12" large-device-size="12">
+                <lightning-textarea   max-length="200" onchange={handleChange} name="Message" label="Message" field-level-help="Provide your query here" required ></lightning-textarea>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div class="slds-var-p-around_small">
+            <lightning-button variant="destructive" label="Cancel" tile="Cancel" onclick={handleCancel}></lightning-button>
+            &nbsp; &nbsp;
+            <lightning-button icon-name="standard:email" variant="brand" label="Send Message" tile="Send Message" onclick={handleSend}></lightning-button>
+        </div>
+    </div>
+</template>
