@@ -11,6 +11,15 @@
         <members>EventDetailService</members>
         <members>EventManager</members>
         <members>TransactionLogHandler</members>
+         <members>ContactUsService</members>
+         <members>ContentVersionTriggerHandler</members>
+         <members>EventDetailComponentComService</members>
+         <members>EventListService</members>
+         <members>FooterComponentService</members>
+         <members>LinkedInRegistrationHandler</members>
+         <members>RegistrationHandler</members>
+         <members>RsvpService</members>
+         <members>UserUtility</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -29,10 +38,12 @@
         <members>EventAttendeeTrigger</members>
         <members>EventSpeakerTrigger</members>
         <members>LocationTrigger</members>
+        <members>ContentVersionTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
         <members>addEventAura</members>
+        <members>eventDetailsAura</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
@@ -45,6 +56,13 @@
         <members>recordListComponent</members>
         <members>searchComponent</members>
         <members>speakerTile</members>
+        <members>searchComponent</members>
+        <members>rsvpComponentCom</members>
+        <members>footerComponent</members>
+        <members>eventTile</members>
+        <members>eventListComponent</members>
+        <members>eventDetailComponentCom</members>
+        <members>contactUsComponent</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
